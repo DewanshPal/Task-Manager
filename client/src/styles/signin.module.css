@@ -1,0 +1,42 @@
+.container{
+    background-image: url('../assets/signinbg.jpg');
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    
+
+    /* border: 1px solid red; */
+}
+.demo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* margin-top: 10%; */
+    padding-top:15% ;
+    height: 35%;
+    align-items: center;
+}
+label{
+    font-size: 30px;
+    font-weight: bolder;
+}
+.btn{
+    width: 10vw;
+}
+.main{
+    /* border:2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 180px;
+    justify-content: space-around;
+}
+.main>div{
+    /* border:2px solid red; */
+    width: 100%;
+}
+@media only screen and (max-width: 450px) {
+    .btn{
+        width: 50vw;
+    }
+}
