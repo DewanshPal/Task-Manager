@@ -118,8 +118,11 @@ export default function Signin() {
     setProgressVisibility(false);
   }
   return (
-    <div className={style.container}>
+    <div>
       {(progressVisibility)?<LinearProgress color="secondary" />:null}
+
+    
+    <div className={style.container}>
     <div className={style.demo}>
     <h1>Sign Up</h1>
     <div className={style.main}>
@@ -161,6 +164,6 @@ export default function Signin() {
     </div>
     <Button variant="contained" sx={{marginBottom:'10px'}} className={style.btn} onClick={handleSubmit}>Sign Up</Button>
     <NavLink to="/signin">Already have an account?</NavLink>
-    </div></div>
+    </div></div></div>
   );
 }

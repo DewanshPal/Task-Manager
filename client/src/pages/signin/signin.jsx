@@ -89,8 +89,9 @@ function Signin() {
     setProgressVisibility(false);
   };
   return (
+    <div>{(progressVisibility)?<LinearProgress color="secondary" />:null}
     <div className={style.container}>
-      {(progressVisibility)?<LinearProgress color="secondary" />:null}
+      
       <div className={style.demo}>
         <h1>Sign In</h1>
         <div className={style.main}>
@@ -126,7 +127,7 @@ function Signin() {
         <NavLink to="/signin/forgetpass">Forget Password?</NavLink>
         <NavLink to="/signup">Don't have an account?</NavLink>
       </div>
-    </div>
+    </div></div>
   );
 }
 

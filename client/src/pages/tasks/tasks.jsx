@@ -4,6 +4,7 @@ import ServerURL from '../../ServerUrl'
 import DeleteIcon from '@mui/icons-material/Delete';
 import Checkbox from '@mui/material/Checkbox';
 import EditIcon from '@mui/icons-material/Edit';
+import LinearProgress from '@mui/material/LinearProgress';
 import { Button,TextField } from '@mui/material';
 
 const Tasks = () => {
@@ -12,7 +13,10 @@ const Tasks = () => {
   const [isCreating,setIsCreating]=useState(false);
   const [isEditing,setIsEditing]=useState(false);
   const [editedTaskId,setEditedTaskId]=useState("");
+  const [progressVisibility,setProgressVisibility]=useState(false);
+
   const getTasks=async()=>{
+    setProgressVisibility(true);
     const res=await fetch(`${ServerURL}/auth/getTasks`,{
       method:"POST",
       headers:{
@@ -24,10 +28,13 @@ const Tasks = () => {
     const data=await res.json();
     setTasks(data.tasks);
     console.log(data);
+    setProgressVisibility(false);
+
   }
   const createTask=async()=>{
     setIsCreating(false);
     if(isEditing){updateTask(editedTaskId,newTask);return;}
+    setProgressVisibility(true);
     const res=await fetch(`${ServerURL}/auth/addTask`,{
       method:"POST",
       headers:{
@@ -37,6 +44,7 @@ const Tasks = () => {
       mode: 'cors',
     })
     getTasks();
+    setProgressVisibility(false);
   }
 
   const updateTask=async(taskId,task)=>{
@@ -49,6 +57,7 @@ const Tasks = () => {
         }
       })
     }
+    setProgressVisibility(true);
     const res=await fetch(`${ServerURL}/auth/updateTask`,{
       method:"POST",
       headers:{
@@ -59,8 +68,10 @@ const Tasks = () => {
     })
     setIsEditing(false);
     getTasks();
+    setProgressVisibility(false);
   }
   const deleteTask=async(id)=>{
+    setProgressVisibility(true);
     const res=await fetch(`${ServerURL}/auth/deleteTask`,{
       method:"POST",
       headers:{
@@ -70,6 +81,8 @@ const Tasks = () => {
       mode: 'cors',
     })
     getTasks();
+    setProgressVisibility(false);
+
   }
 
   const createNewTask=()=>{
@@ -88,6 +101,8 @@ const Tasks = () => {
     getTasks();
   },[])
   return (
+    <div>
+      {(progressVisibility)?<LinearProgress color="secondary" />:null}
     <div className={styles.container}>
       <h1 style={{textTransform:"capitalize"}}>Hi {JSON.parse(localStorage.getItem('userData')).username}</h1>
       <h1>TASKS</h1>
@@ -131,7 +146,7 @@ const Tasks = () => {
               Create Task
         </Button>
       </div>
-    </div>
+    </div></div>
   )
 }
 
