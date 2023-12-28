@@ -22,7 +22,6 @@ function Signin() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setProgressVisibility(true);
     const { email, password } = user;
     if (!email || !password) {
       toast("All fields are Mandatory!", {
@@ -38,13 +37,11 @@ function Signin() {
       });
       return;
     }
+    setProgressVisibility(true);
     const res = await fetch(`${ServerURL}/auth/signin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        // 'Access-Control-Allow-Origin': '*',
-        // 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
-        // 'Access-Control-Allow-Headers': 'Content-Type, Authorization'
       },
       mode: "cors",
       body: JSON.stringify({ email, password }),

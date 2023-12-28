@@ -22,7 +22,6 @@ export default function Signin() {
   }
   const handleSubmit= async (e)=>{
     e.preventDefault();
-    setProgressVisibility(true);
 
     const {username,email,password,cpassword}=user;
     if(!username||!email||!password||!cpassword){
@@ -52,6 +51,7 @@ export default function Signin() {
         theme: "colored",
       });
       return;}
+    setProgressVisibility(true);
     // --------------------------------------------------
     const res = await fetch(`${ServerURL}/auth/signup`,{
       method:"POST",
@@ -159,7 +159,7 @@ export default function Signin() {
         />
       </div>
     </div>
-    <Button variant="contained" className={style.btn} onClick={handleSubmit}>Sign Up</Button>
+    <Button variant="contained" sx={{marginBottom:'10px'}} className={style.btn} onClick={handleSubmit}>Sign Up</Button>
     <NavLink to="/signin">Already have an account?</NavLink>
     </div></div>
   );

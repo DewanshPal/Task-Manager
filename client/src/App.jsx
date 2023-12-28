@@ -9,11 +9,11 @@ import Navbar from './components/navbar'
 import { ToastContainer } from 'react-toastify'
 import ForgetPass from './pages/signin/forgetPass/forgetPass'
 function App() {
-
+  
   return (
-    <div>
-      <ToastContainer/>
+    <div className='App'>
       <Navbar/>
+      <ToastContainer/>
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route exact path='/signin' element={<Signin/>}/>

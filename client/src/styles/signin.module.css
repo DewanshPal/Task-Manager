@@ -3,17 +3,24 @@
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid red; */
     
 
-    /* border: 1px solid red; */
 }
 .demo{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     /* margin-top: 10%; */
-    padding-top:15% ;
-    height: 35%;
+    width: fit-content;
+    margin:10% 0% ;
+    /* border: 2px solid red; */
+    height: 45%;
+    padding:3% 3%;
+    background-color: rgb(255,255,255,0.3);
+    border-radius: 10px;
     align-items: center;
 }
 label{
@@ -21,7 +28,7 @@ label{
     font-weight: bolder;
 }
 .btn{
-    width: 10vw;
+    width: 60%; 
 }
 .main{
     /* border:2px solid red; */
@@ -38,5 +45,8 @@ label{
 @media only screen and (max-width: 450px) {
     .btn{
         width: 50vw;
+    }
+    .demo{
+        width: 80%;
     }
 }

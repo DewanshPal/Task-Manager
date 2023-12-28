@@ -14,6 +14,7 @@ const Navbar = () => {
         padding: "10px",
         display: "flex",
         // border: "2px solid red",
+        width:'100%',
         justifyContent: "flex-start",
         backgroundColor: "grey",
       }}

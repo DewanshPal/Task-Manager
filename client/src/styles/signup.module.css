@@ -1,21 +1,29 @@
 .container{
+    height: 100vh;
+    width: 100%;
     background-image: url('../assets/signupbg.jpg');
     background-size: cover;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* border:2px solid red; */
     background-repeat: no-repeat;
 }
 .demo{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top:15% ;
-    height: 350px;
+    margin-top:10% ;
+    height: max-content;
+    width: 30%;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgb(255,255,255,0.5);
     /* border:2px solid red; */
     align-items: center;
     
 }
 .btn{
-    width: 10%;
+    width: 20%;
 }
 label{
     font-size: 2vw;
@@ -25,7 +33,8 @@ label{
     display: flex;
     flex-direction: column;
     /* border: 2px solid red; */
-    width: 30%;
+    width: 100%;
+    height: max-content;
 
 }
 .main>div{
@@ -36,7 +45,16 @@ label{
 }
 @media only screen and (max-width: 450px) {
     .btn{
-        width: 50vw;
+        width: 60%;
     }
-    
+    .demo{
+        width: 80%;
+    }
+    .main>div{
+        flex-direction: column;
+        height:130px
+    }
+    .main{
+        margin:10px 0px;    
+    }
 }

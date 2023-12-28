@@ -206,6 +206,7 @@ const Forgetpass = () => {
                         id="outlined-multiline-flexible"
                         label="Create New Password"
                         multiline
+                        type={"password"}
                         maxRows={4}
                         value={pass}
                         name="pass"
