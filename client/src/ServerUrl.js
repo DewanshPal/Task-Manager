@@ -1,2 +1,2 @@
-const ServerURL = "http://localhost:5000";
+const ServerURL = "https://taskmanagerserver-4i1b.onrender.com";
 export default ServerURL; 
