@@ -8,7 +8,7 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 app.use(
   cors({
-    origin: "https://euphonious-horse-8181bc.netlify.app",
+    origin: "https://taskify108.netlify.app",
     // origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["*"],
